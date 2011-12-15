@@ -1,0 +1,35 @@
+!!! 5
+html(lang="ja")
+  head
+    include includes/head/common
+    title= channel.name
+    script
+      $(function(){
+        FLOWR.attribute.user = {
+          exists    :  #{user.exists},
+          key       : "#{user._id}",
+          name      : "#{user.name}",
+          user_id   : "#{user.user_id}",
+          joined_at : "#{user.joined_at}"
+        };
+        FLOWR.attribute.channel = {
+          key   : "#{channel._id}",
+          id    : "#{channel.channel_id}",
+          name  : "#{channel.name}",
+          queue : []
+        };
+      });
+    include includes/head/channel
+  body
+    - var current = channel.queue[channel.current];
+    include includes/header
+    #content(class='fullsize-with-header')
+      #comment(title='', data-content='')
+      #feedback(title='', data-content='')
+      #content-frame
+        ul
+          li
+            - if(current.type == 'video')
+              div(id='player', class='fullsize no-space')
+            - else
+              iframe(src=channel.queue[channel.current].url, class='fullsize no-space', frameborder=0, seamless)

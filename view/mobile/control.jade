@@ -1,0 +1,27 @@
+!!! 5
+html(lang='ja')
+  head
+    include includes/head/common
+    title リストを操作する / flowr
+  body
+    - var current = channel.queue[channel.current];
+    div(data-role='page')
+      include includes/head/control
+      include includes/header
+      div(data-role='content')
+        ul(id='current', data-role='listview', data-inset='true')
+          li
+            span(class='title') title
+          li
+            span(class='thumbnail')
+              img(src='http://placehold.it/210x150')
+        div(data-role='controlgroup', data-type='horizontal', id='control-panel')
+          a(href='', class='prev', data-role='button', data-icon='arrow-l', data-inline='true') もどる
+          a(href='',, data-role='button', data-icon='grid', data-inline='true')
+            span アクセス: 
+            span(class='access')= channel.access
+          a(href='', data-role='button', data-icon='star', data-inline='true')
+            span お気に入り: 
+            span(class='fav')=  channel.fav
+          a(href='', class='next', data-role='button', data-icon='arrow-r', data-inline='true', data-iconpos='right') すすむ
+      include includes/footer

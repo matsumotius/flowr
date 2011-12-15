@@ -1,0 +1,15 @@
+!!! 5
+html(lang="ja")
+  head
+    include includes/head/common
+    title ユーザページ / flowr
+  body
+    div(data-role='page')
+      script(type='text/javascript', src='/js/' + type + '/dashboard.js')
+      include includes/header
+      div(data-role='content')
+        ul(data-role="listview", data-theme='g')
+          - each item in fav
+            li
+              a(href='')= item.channel_id + 'さんのチャンネルに更新がありました'
+      include includes/footer

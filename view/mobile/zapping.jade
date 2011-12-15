@@ -1,0 +1,26 @@
+!!! 5
+html(lang='ja')
+  head
+    include includes/head/common
+    title ディスプレイを操作する / flowr
+  body
+    div(data-role='page')
+      include includes/head/zapping
+      include includes/header
+      div(data-role='content')
+        fieldset(class='ui-grid-a')
+          div(id='input', class='ui-block-a')
+          div(id='feedback', class='ui-block-b')
+            h1 ディスプレイ操作
+            p 操作したい項目をタッチして回してください
+            #feedback-detail
+              p
+                span(class='title')
+              span(class='thumbnail')
+                img(src='http://placehold.it/210x150')
+            fieldset(class='ui-grid-a')
+              div(class='ui-block-a')
+                button(id='cancel',data-theme='c') キャンセル
+              div(class='ui-block-b')
+                button(id='enter', data-theme='b') 決定
+      include includes/footer

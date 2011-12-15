@@ -1,0 +1,53 @@
+body {
+  padding-top : 40px;
+}
+.fullsize {
+  width : 100%;
+  height : 100%;
+}
+.fullsize-with-header {
+  width : 100%;
+}
+.no-space {
+  padding : 0px;
+  margin : 0px;
+}
+.hidden {
+  display : none;
+}
+.float-left {
+  float : left;
+}
+.no-list-style {
+  list-style : none;
+}
+#attributes {
+  display : none;
+}
+#message {
+  margin-top : 40px;
+}
+#message h1 {
+  margin : 10px;
+}
+#message .link {
+  text-align : center;
+}
+#header {
+  padding : 0px;
+  margin : 0px;
+  width : 100%;
+  height : 30px;
+  color : #dddddd;
+  background-color : #dddddd;
+}
+#login-form {
+  float : right;
+}
+#login-form input {
+  margin : auto 3px auto 3px;
+}
+.label img {
+  width : 14px;
+  margin : 4px 4px 0 3px;
+}

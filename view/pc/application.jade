@@ -1,0 +1,25 @@
+!!! 5
+html(lang="ja")
+  head
+    include includes/head/common
+    link(type='text/css', rel='stylesheet', href='/css/'+type+'/application.css')
+    script(type='text/javascript', src='/js/'+type+'/application.js')
+    title 新規登録 / flowr
+  body
+    include includes/header
+    div(id='application', class='container')
+      div(id='title')
+        h1 f l o w r
+      div(id='description')
+        h3 flowrはコンテンツをリアルタイムにシェアするWebアプリケーションです
+      div(id='form-co')
+        form(id='register-form', method='post', action='/application')
+          input(type='hidden', name='csrf', value=csrf)
+          div
+            input(type='text', name='user_id', id='user_id', placeholder='ユーザーID')
+          div
+            input(type='password', name='password', id='password', placeholder='パスワード')
+          div
+            input(type='submit', id='submit', class='btn success', value='flowr をはじめる')
+    #footer
+      flowr

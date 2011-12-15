@@ -1,0 +1,14 @@
+!!! 5
+html(lang="ja")
+  head
+    include includes/head/common
+    title エラー / flowr
+  body
+    include includes/header
+    div(class='container')
+      div(id='message', class='alert-message block-message')
+        h1() エラーが起きました
+        h3= message
+        div(class='link')
+          h3
+            a(href='/') ホームに戻る

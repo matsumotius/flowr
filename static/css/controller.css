@@ -1,0 +1,28 @@
+#time {
+    font-size : 100px;
+    font-family : sans-serif;
+}
+
+#canvas {
+    width : 400px;
+    height : 400px;
+}
+
+#button-container {
+    width : 200px;
+}
+#prev, #next {
+    background-color : #dddddd;
+}
+#enter, #cancel {
+    background-color : #aaaaaa;
+}
+.controller-button {
+    margin : 0px;
+    padding : 28px 0px 0px 0px; 
+    width : 100px;
+    height : 54px;
+    text-align : center;
+    float : left;
+    cursor : pointer;
+}

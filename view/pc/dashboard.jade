@@ -1,0 +1,53 @@
+!!! 5
+html(lang="ja")
+  head
+    include includes/head/common
+    include includes/head/dashboard
+    title flowr / ホーム
+  body
+    include includes/header
+    - var current = channel.queue[channel.current];
+    div(class='container')
+      div(id='post-container')
+        h3 共有する
+        div(id='post')
+          form(action='/', method='post')
+            p
+              input(type='text', name='url', class='xxlarge url', placeholder='いましていることや、いまみているページのURLを')
+              input(type='submit', class='btn default', value='共有する')
+            span(class='comment hidden')
+              input(type='text', name='comment', class='xlarge', value='', placeholder='コメント')
+            input(type='hidden', name='csrf', value=csrf)
+      h3 リストの管理
+      ul(id='current')
+        ul
+          li(class='message') 放送中のコンテンツ : 
+          li(class='info')= current.title
+        ul(id='operation-list')
+          li(class='prev-wrapper')
+            span(class='prev') < もどる
+          li(class='access-wrapper')
+            span 視聴者:
+            span(class='access')= channel.access
+          li(class='fav-wrapper')
+            span お気に入り:
+            span(class='fav')= channel.fav
+          li(class='next-wrapper')
+            span(class='next') すすむ >
+      ul(id='content-detail')
+        li(class='info')
+          span(class='content-title')= current.title
+          span(class='content-posted_at')= current.posted_at
+        li(class='operation')
+          div(class='content-delete') このコンテンツを削除する
+      div(id='timeline-container')
+        ul(id='timeline', class='media-grid')
+          - each content, index in channel.queue
+            - var cls = channel.current == index ? 'content now' : 'content';
+            li(class=cls)
+              .span4
+                img(class='thumbnail', src="http://placehold.it/210x150", alt="")
+              input(type='hidden', class='content-title', value=content.title)
+              input(type='hidden', class='content-id', value=content._id)
+              input(type='hidden', class='content-posted_at', value=content.posted_at)
+              input(type='hidden', class='content-url', value=content.url)

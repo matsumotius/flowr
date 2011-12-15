@@ -1,0 +1,23 @@
+#application {
+  padding : 40px 0px 0px 0px;
+}
+#title {
+  padding : 64px 0px 0px 0px;
+  text-align : center;
+}
+#description {
+  text-align : center;
+}
+#register-form {
+  text-align : center;
+  padding : 12px 0px 0px 0px;
+}
+#register-form input {
+  padding : 9px;
+}
+#register-form div {
+  margin : 12px;
+}
+#register-form button {
+  height : 36px;
+}

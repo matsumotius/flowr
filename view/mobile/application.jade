@@ -1,0 +1,18 @@
+!!! 5
+html(lang='ja')
+  head
+    include includes/head/common
+    title 新規登録 / flowr
+  body
+    div(data-role='page')
+      include includes/header
+      div(data-role='content')
+        h1 FLOWR - 新規登録
+        p FLOWRはコンテンツをリアルタイムにシェアするアプリケーションです
+        form(action='#', method='get')
+          label(for='user_id', class='ui-hidden-accessible') ユーザID
+          input(type='text', name='user_id', id='user_id', value='', placeholder='ユーザID')
+          label(for='password', class='ui-hidden-accessible') パスワード
+          input(type='password', name='password', id='password', value='', placeholder='パスワード')
+          input(type='hidden', name='csrf', value=csrf)
+          button(type='submit', data-theme='a') FLOWRをはじめる

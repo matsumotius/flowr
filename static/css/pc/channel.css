@@ -1,0 +1,26 @@
+#content {
+  margin : 0px;
+  padding : 0px;
+}
+#content-frame {
+  margin : 0px;
+  padding : 0px;
+  width : 100%;
+}
+#content-frame ul {
+  margin : 0px;
+  padding : 0px;
+}
+#content-frame li {
+  height : 100%;
+}
+.image-container {
+  text-align : center;
+}
+#feedback .popover .inner {
+  width : 640px;
+  text-align : center;
+}
+#feedback .popover .info {
+  padding : 10px;
+}

@@ -1,0 +1,11 @@
+link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
+link(type='text/css', rel='stylesheet', href='/css/'+type+'/common.css')
+script(type = 'text/javascript', src = '/js/lib/jquery-1.6.js')
+script(type = 'text/javascript', src = '/js/lib/fusuma.js')
+script(type = 'text/javascript', src = '/js/flowr.js')
+script(type = 'text/javascript', src = '/js/'+type+'/util.js')
+script(type = 'text/javascript', src = '/js/'+type+'/view.js')
+script
+  $(function(){
+    FLOWR.attribute = { host : "#{host}" };
+  });

@@ -1,0 +1,16 @@
+div(id='header', class='topbar', data-dropdown='dropdown')
+  div(class='topbar-inner')
+    div(class='container')
+      h3
+        a(href='/') f l o w r
+      - if(user.exists)
+        ul(class='nav')
+          li
+            a(href='/')= user.user_id
+        p(id='user-dropdown', class='pull-right')= user.id
+      - else
+        form(id='login-form', method='post', action='/login')
+          input(type='text', name='user_id', class='small', placeholder='ユーザ名')
+          input(type='password', name='password', class='small', placeholder='パスワード')
+          input(type='hidden', name='csrf', value=csrf)
+          input(type='submit', class='btn success', value='ログイン')

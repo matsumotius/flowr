@@ -1,0 +1,7 @@
+div(id='header', data-role='header', data-theme='a', data-position='inline')
+  a(href='/', data-icon='home', class='') ホーム
+  h1(class='header-title') flowr
+  - if(user.exists)
+    a(href='/login', data-icon='check', class='ui-btn-right') 設定
+  - else
+    a(href='/login', data-icon='check', class='ui-btn-right') ログイン

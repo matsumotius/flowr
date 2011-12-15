@@ -1,0 +1,81 @@
+#post-container {
+  margin-top : 24px;
+  margin-bottom : 24px;
+}
+#post input {
+  margin-right : 3px;
+}
+#current {
+  border-radius : 4px;
+  -webkit-border-radius : 4px;
+  -moz-border-radius : 4px;
+  background-color : #eee;
+  width : 60%;
+  padding : 10px;
+  margin : 4px auto;
+  text-align : center;
+}
+#current li {
+  display : inline-block;
+  list-style : none;
+}
+#current .info {
+  padding : 6px;
+  color : #fc3402;
+}
+#content-detail {
+  border-radius : 4px;
+  -webkit-border-radius : 4px;
+  -moz-border-radius : 4px;
+  margin : 0px;
+  background-color : #eee;
+}
+#content-detail li {
+  display : inline-block;
+  list-style : none;
+  text-align : center;
+}
+#content-detail .content-title {
+  font-size : 24px;
+}
+#content-detail .info {
+  width : 80%;
+  margin : 10px auto;
+  border-right : 1px solid #aaa;
+}
+#content-detail .info span {
+  padding : 6px;
+}
+#content-detail .operation {
+  width : 19%;
+}
+#content-detail .operation button {
+  margin : 3px;
+}
+#timeline-container {
+  overflow-x : scroll;
+}
+#timeline {
+  width : 9999px;
+  padding : 0px;
+  margin : 0px;
+}
+#timeline li {
+  padding : 5px 0px 0px 0px;
+  display : inline-block;
+  list-style : none;
+  text-align : center;
+}
+#timeline .content {
+  cursor : pointer;
+}
+#timeline .now {
+  border-top : 0px;
+  background-color : yellow;
+}
+#timeline .focus {
+  border : 1px solid #000;
+}
+#operation-list li {
+  width : 24%;
+}
