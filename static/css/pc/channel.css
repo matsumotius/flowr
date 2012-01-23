@@ -17,10 +17,13 @@
 .image-container {
   text-align : center;
 }
-#feedback .popover .inner {
+.popover {
+  width : 640px;
+}
+.popover .inner {
   width : 640px;
   text-align : center;
 }
-#feedback .popover .info {
+.info {
   padding : 10px;
 }

@@ -7,5 +7,8 @@ script(type = 'text/javascript', src = '/js/'+type+'/util.js')
 script(type = 'text/javascript', src = '/js/'+type+'/view.js')
 script
   $(function(){
-    FLOWR.attribute = { host : "#{host}" };
+    FLOWR.attribute = {
+      host : "#{host}",
+      api  : "#{api}"
+    };
   });

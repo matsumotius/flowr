@@ -103,10 +103,11 @@ $(function(){
   FLOWR.Zapping = {};
   FLOWR.Zapping.channel_array = [];
   FLOWR.Zapping.fav_array = [];
-  FLOWR.Zapping.feedback = function(type, id, desc){
-    $('#feedback').attr('title', type + ' / ' + id);
-    $('#feedback').attr('data-content', FLOWR.View.Generator.feedback(desc));
-    var message = { title : type + ' / ' + id, desc : desc };
+  FLOWR.Zapping.feedback = function(type, channel){
+    var thumbnail = FLOWR.attribute.api + '/thumbnail?url=' + channel.current.url;
+    $('#feedback').attr('title', type + ' / ' + channel.channel_id);
+    $('#feedback').attr('data-content', FLOWR.View.Generator.feedback(thumbnail, channel.description));
+    var message = { title : type + ' / ' + channel.channel_id, desc : channel.description };
     zapping_socket.emit('zapping/change', { key : 'feedback', value : message });
   };
   FLOWR.Zapping.can_sync = false;
@@ -150,7 +151,7 @@ $(function(){
       var channel_array = FLOWR.Zapping.channel_array;
       var channel = channel_array[value % channel_array.length];
       FLOWR.Zapping.current_channel = channel;
-      FLOWR.Zapping.feedback('チャンネル', channel.channel_id, channel.description);
+      FLOWR.Zapping.feedback('チャンネル', channel);
       $('#feedback').popover('show');
     },
     scroll : function(value){

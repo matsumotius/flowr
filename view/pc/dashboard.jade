@@ -46,7 +46,7 @@ html(lang="ja")
             - var cls = channel.current == index ? 'content now' : 'content';
             li(class=cls)
               .span4
-                img(class='thumbnail', src="http://placehold.it/210x150", alt="")
+                img(class='thumbnail', src=api + "/thumbnail?url=" + content.url, alt="")
               input(type='hidden', class='content-title', value=content.title)
               input(type='hidden', class='content-id', value=content._id)
               input(type='hidden', class='content-posted_at', value=content.posted_at)

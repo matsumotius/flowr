@@ -43,8 +43,8 @@ $(function(){
       return FLOWR.Util.Tag.generate('div', { 'id' : 'player', 'class' : 'fullsize no-space' }, null);
     }
   };
-  generator.feedback = function(description){
-    var img = $('<img />').attr({ 'src' : 'http://placehold.it/210x150' });
+  generator.feedback = function(thumbnail, description){
+    var img = $('<img />').attr({ 'src' : thumbnail });
     var info = $('<div />').attr('class', 'info');
     var desc = $('<div />').attr('clsss', 'description').text(description);
     info.append(desc);
