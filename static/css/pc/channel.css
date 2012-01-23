@@ -25,6 +25,9 @@
   height : 280px;
   text-align : center;
 }
+.popover .content {
+  height : 280px;
+}
 .info {
   padding : 10px;
 }
