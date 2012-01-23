@@ -1,6 +1,11 @@
 $(function(){
   FLOWR.Control = {};
   FLOWR.Control.current = {};
+  FLOWR.Control.feedback = function(content){
+    var thumbnail_url = FLOWR.attribute.api + '/thumbnail?url=' + content.url;
+    $('#current .title').text(content.title);
+    $('#current .thumbnail-image').attr('src', thumbnail_url);
+  };
   $('#footer .control').addClass('ui-btn-active');
   var socket = io.connect(FLOWR.attribute.host);
   socket.emit('control/join', {
@@ -16,13 +21,13 @@ $(function(){
       index   : channel.current,
       content : channel.queue[channel.current]
     };
-    $('#current .title').text(FLOWR.Control.current.content.title);
+    FLOWR.Control.feedback(FLOWR.Control.current.content);
   });
   socket.on('control/next', function(message){
-    $('#current .title').text(message.content.title);
+    FLOWR.Control.feedback(message.content);
   });
   socket.on('control/prev', function(message){
-    $('#current .title').text(message.content.title);
+    FLOWR.Control.feedback(message.content);
   });
   $('#control-panel .next').tap(function(e){
     socket.emit('control/next', {

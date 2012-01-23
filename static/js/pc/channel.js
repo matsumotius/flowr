@@ -23,7 +23,7 @@ $(function(){
         });
       });
     });
-  }
+  };
   FLOWR.View.Parts.frame = $('#content-frame');
   FLOWR.View.Parts.queue = FLOWR.View.Parts.frame.fusuma();
   FLOWR.Channel.current  = {};
@@ -107,7 +107,11 @@ $(function(){
     var thumbnail = FLOWR.attribute.api + '/thumbnail?url=' + channel.current.url;
     $('#feedback').attr('title', type + ' / ' + channel.channel_id);
     $('#feedback').attr('data-content', FLOWR.View.Generator.feedback(thumbnail, channel.description));
-    var message = { title : type + ' / ' + channel.channel_id, desc : channel.description };
+    var message = {
+      title       : type + ' / ' + channel.channel_id,
+      current     : channel.current,
+      description : channel.description
+    };
     zapping_socket.emit('zapping/change', { key : 'feedback', value : message });
   };
   FLOWR.Zapping.can_sync = false;

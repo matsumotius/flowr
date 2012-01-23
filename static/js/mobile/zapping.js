@@ -17,7 +17,9 @@ $(function(){
   };
   FLOWR.Zapping.feedback = function(content){
     if(null == content || undefined == content) return;
+    var thumbnail_url = FLOWR.attribute.api + '/thumbnail?url=' + content.current.url;
     $('#feedback .title').text(content.title);
+    $('#feedback .thumbnail-image').attr('src', thumbnail_url);
   };
   FLOWR.Zapping.remove_mode = function(mode){
     if(false == mode in FLOWR.Zapping.mode) return;
