@@ -52,9 +52,20 @@ var service = module.exports = {
   },
   find_all : function(limit){
     var ev = new EventEmitter();
-    var searching_channel = channel_dao.find({}, ['_id', 'channel_id', 'description'], {});
+    var searching_channel = channel_dao.find({}, [], { limit : 300 });
     searching_channel.on('end', function(channels){
-      if(channels.length > 0) { ev.emit('end', channels); } 
+      if(channels.length > 0){
+        var result = [];
+        for(var i=0;i<channels.length;i++){
+          result.push({
+            _id         : channels[i]._id,
+            channel_id  : channels[i].channel_id,
+            description : channels[i].description,
+            current     : channels[i].queue[channels[i].current]
+          });
+        }
+        ev.emit('end', result);
+      } 
       else { ev.emit('error', 'チャンネルがありません', 404); }
     });
     searching_channel.on('error', function(){ ev.emit('error', 'internal error', 500); });

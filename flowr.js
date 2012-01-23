@@ -9,6 +9,7 @@ var RedisStore = require('connect-redis');
 var csrf = require('express-csrf');
 var config = require('./resource/config');
 var store = new (require('connect').session.MemoryStore)();
+
 app.configure(function(){
   app.set('views', __dirname + '/view');
   app.set('view options', { layout : false, filename : __dirname + '/view/index.jade' });
@@ -22,10 +23,12 @@ app.configure(function(){
     csrf : csrf.token,
     user : function(req, res){ return request_service.get_user(req); },
     type : function(req, res){ return request_service.get_type(req); },
-    host : function(req, res){ return config.host }
+    host : function(req, res){ return config.host; },
+    api  : function(req, res){ return config.api; }
   });
   app.use(csrf.check());
 });
+
 var url_mapping = {
   load : function(name){
     return require('./controller' + name); 
@@ -41,6 +44,7 @@ var url_mapping = {
     app.post(uri, url_mapping.ua, url_mapping.load(load_path).post);
   }
 };
+
 /* GET */
 url_mapping.get('/', '/dashboard');
 url_mapping.get('/application', '/application');
