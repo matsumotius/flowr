@@ -22,6 +22,7 @@
 }
 .popover .inner {
   width : 640px;
+  height : 280px;
   text-align : center;
 }
 .info {
