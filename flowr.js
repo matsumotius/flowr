@@ -54,7 +54,8 @@ url_mapping.get('/control', '/control');
 url_mapping.get('/zapping', '/zapping');
 url_mapping.get('/ch/:user_id', '/channel');
 url_mapping.get('/api/ch/all', '/api/all_channel'); 
-url_mapping.get('/api/ch/:user_id', '/api/channel'); 
+url_mapping.get('/api/ch/:user_id', '/api/channel');
+url_mapping.get('/demo', '/demo'); 
 /* POST */
 url_mapping.post('/', '/dashboard');
 url_mapping.post('/login', '/login');
