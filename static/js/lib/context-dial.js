@@ -46,6 +46,8 @@ $(function(){
     var CD_EVENTS = ['change', 'touchstart', 'touchmove', 'touchend'];
     var ContextDial = function(_target, _options){
         this.target = _target;
+        this.target_x = $(this.target).offset().left;
+        this.target_y = $(this.target).offset().top;
         this.options = $.extend(default_options.context_wheel, _options);
         this.x = this.options.x;
         this.y = this.options.y;
@@ -70,6 +72,8 @@ $(function(){
         var radian_from_90 = radian_from(90), radian_from_270 = radian_from(270);
         // todo: move to other block
         this.dial.on(mousemove, function(e){
+            var event_x = e.pageX - that.target_x;
+            var event_y = e.pageY - that.target_y;
             this.count++;
             if(this.count % 3 > 0) return;
             this.count = 0;
@@ -77,14 +81,14 @@ $(function(){
                 var context = that.list[key];
                 if(false === context.is_drugging) continue;
                 var old_radian = that.rail.get_radian({ x : context.en.x, y : context.en.y });
-                var new_radian = that.rail.get_radian({ x : e.pageX, y : e.pageY });
+                var new_radian = that.rail.get_radian({ x : event_x, y : event_y });
                 if(old_radian < 0) old_radian += round;
                 if(new_radian < 0) new_radian += round;
                 var radian_diff = old_radian - new_radian;
                 if(old_radian >= half_round && new_radian < radian_from_90)  radian_diff -= round;
                 if(old_radian <= half_round && new_radian > radian_from_270) radian_diff += round;
                 context.value += context.value_by_rot * radian_diff / RADIAN_BY_ROT;
-                context.en.move(e.pageX, e.pageY);
+                context.en.move(event_x, event_y);
                 context.adjust_value();
                 that.relocate_context(key);
                 that.fire('touchmove', context);
