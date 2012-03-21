@@ -22,16 +22,16 @@ $(function(){
     type   : 'fill'
   };
   FLOWR.Dial.context = {
-    sound    : { max : 100,  min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option },
-    time     : { max : 100,  min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option },
-    link     : { max : 9999, min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option },
-    scroll   : { max : 9999, min : 0, value_by_rot :150, en : FLOWR.Dial.en_option },
-    channel  : { max : 9999, min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option },
-    fav      : { max : 9999, min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option },
-    friend   : { max : 9999, min : 0, value_by_rot : 50, en : FLOWR.Dial.en_option }
+    sound    : { max : 100,  min : 0,     value_by_rot : 50, en : FLOWR.Dial.en_option },
+    time     : { max : 9999, min : -9999, value_by_rot : 50, en : FLOWR.Dial.en_option },
+    link     : { max : 9999, min : 0,     value_by_rot : 50, en : FLOWR.Dial.en_option },
+    scroll   : { max : 9999, min : 0,     value_by_rot :150, en : FLOWR.Dial.en_option },
+    channel  : { max : 9999, min : 0,     value_by_rot : 50, en : FLOWR.Dial.en_option },
+    fav      : { max : 9999, min : 0,     value_by_rot : 50, en : FLOWR.Dial.en_option },
+    friend   : { max : 9999, min : 0,     value_by_rot : 50, en : FLOWR.Dial.en_option }
   };
   FLOWR.Dial.mode = {
-    page  : ['channel', 'scroll', 'fav'],
+    page  : ['channel'],
     video : ['channel', 'sound', 'time']
   };
 });

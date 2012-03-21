@@ -50,6 +50,17 @@ $(function(){
     info.append(desc);
     return $('<a />').append($('<div />').append(img).append(info)).html();
   };
+  generator.demo_feedback = function(thumbnail, description){
+    var img    = $('<img />').attr({ 'src' : thumbnail });
+    var info   = $('<div />').attr('class', 'info');
+    var desc   = $('<div />').attr('clsss', 'description').text(description);
+    var enter  = $('<div />').attr('class', 'btn success enter').text('このチャンネルを見る');
+    var cancel = $('<div />').attr('class', 'btn cancel').text('キャンセル');
+    info.append(desc);
+    info.append(enter);
+    info.append(cancel);
+    return $('<a />').append($('<div />').append(img).append(info)).html();
+  };
   FLOWR.View.Generator = generator;
 });
 // View Parts
