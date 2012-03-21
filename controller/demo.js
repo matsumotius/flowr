@@ -3,6 +3,6 @@
  */
 var demo = module.exports = {
   get : function(req, res){
-    res.render('mobile/demo.jade', { locals : {} });
+    res.render('pc/demo.jade', { locals : {} });
   }
 };

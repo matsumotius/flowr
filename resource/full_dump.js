@@ -46,7 +46,7 @@ for(var i=1;i<100;i++){
     channel_id  : flowr_user.user_id,
     name        : flowr_user.user_id + 'さんのチャンネル',
     queue       : [a, b, c, d, e],
-    current     : 1,
+    current     : 3,
     owner       : flowr_user._id,
     description : flowr_user.user_id + 'さんのチャンネルです',
     fav         : 0,
